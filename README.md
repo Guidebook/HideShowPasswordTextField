@@ -2,7 +2,7 @@
 An easy to use `UITextField` subclass that adds a visibility toggle and an optional validation checkmark
 
 
-Created by [@lookatpete](https://twitter.com/lookatpete) (product), [@pklada](@pklada) (design), and [@miketsprague](miketsprague) (code)
+Created by [@lookatpete](https://twitter.com/lookatpete) (product), [@pklada](https://twitter.com/pklada) (design), and [@miketsprague](https://twitter.com/miketsprague) (code)
 
 ## Installation
 ### Cocoapods
