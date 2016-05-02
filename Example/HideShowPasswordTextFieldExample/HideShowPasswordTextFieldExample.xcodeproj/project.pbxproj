@@ -1,0 +1,348 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		7C8BC4CD1CD7EB3700402247 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C8BC4CC1CD7EB3700402247 /* AppDelegate.swift */; };
+		7C8BC4CF1CD7EB3700402247 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C8BC4CE1CD7EB3700402247 /* ViewController.swift */; };
+		7C8BC4D21CD7EB3700402247 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7C8BC4D01CD7EB3700402247 /* Main.storyboard */; };
+		7C8BC4D41CD7EB3700402247 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7C8BC4D31CD7EB3700402247 /* Assets.xcassets */; };
+		7C8BC4D71CD7EB3700402247 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7C8BC4D51CD7EB3700402247 /* LaunchScreen.storyboard */; };
+		7C8BC4E11CD7EB4700402247 /* HideShowPasswordTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C8BC4DF1CD7EB4700402247 /* HideShowPasswordTextField.swift */; };
+		7C8BC4E21CD7EB4700402247 /* PasswordToggleVisibilityView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C8BC4E01CD7EB4700402247 /* PasswordToggleVisibilityView.swift */; };
+		7C8BC4EC1CD7ED9100402247 /* ic_eye_closed.png in Resources */ = {isa = PBXBuildFile; fileRef = 7C8BC4E31CD7ED9100402247 /* ic_eye_closed.png */; };
+		7C8BC4ED1CD7ED9100402247 /* ic_eye_closed@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7C8BC4E41CD7ED9100402247 /* ic_eye_closed@2x.png */; };
+		7C8BC4EE1CD7ED9100402247 /* ic_eye_closed@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7C8BC4E51CD7ED9100402247 /* ic_eye_closed@3x.png */; };
+		7C8BC4EF1CD7ED9100402247 /* ic_eye_open.png in Resources */ = {isa = PBXBuildFile; fileRef = 7C8BC4E61CD7ED9100402247 /* ic_eye_open.png */; };
+		7C8BC4F01CD7ED9100402247 /* ic_eye_open@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7C8BC4E71CD7ED9100402247 /* ic_eye_open@2x.png */; };
+		7C8BC4F11CD7ED9100402247 /* ic_eye_open@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7C8BC4E81CD7ED9100402247 /* ic_eye_open@3x.png */; };
+		7C8BC4F21CD7ED9100402247 /* ic_password_checkmark.png in Resources */ = {isa = PBXBuildFile; fileRef = 7C8BC4E91CD7ED9100402247 /* ic_password_checkmark.png */; };
+		7C8BC4F31CD7ED9100402247 /* ic_password_checkmark@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7C8BC4EA1CD7ED9100402247 /* ic_password_checkmark@2x.png */; };
+		7C8BC4F41CD7ED9100402247 /* ic_password_checkmark@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7C8BC4EB1CD7ED9100402247 /* ic_password_checkmark@3x.png */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		7C8BC4C91CD7EB3700402247 /* HideShowPasswordTextFieldExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HideShowPasswordTextFieldExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		7C8BC4CC1CD7EB3700402247 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		7C8BC4CE1CD7EB3700402247 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		7C8BC4D11CD7EB3700402247 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		7C8BC4D31CD7EB3700402247 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		7C8BC4D61CD7EB3700402247 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		7C8BC4D81CD7EB3700402247 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		7C8BC4DF1CD7EB4700402247 /* HideShowPasswordTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HideShowPasswordTextField.swift; sourceTree = "<group>"; };
+		7C8BC4E01CD7EB4700402247 /* PasswordToggleVisibilityView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PasswordToggleVisibilityView.swift; sourceTree = "<group>"; };
+		7C8BC4E31CD7ED9100402247 /* ic_eye_closed.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ic_eye_closed.png; sourceTree = "<group>"; };
+		7C8BC4E41CD7ED9100402247 /* ic_eye_closed@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ic_eye_closed@2x.png"; sourceTree = "<group>"; };
+		7C8BC4E51CD7ED9100402247 /* ic_eye_closed@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ic_eye_closed@3x.png"; sourceTree = "<group>"; };
+		7C8BC4E61CD7ED9100402247 /* ic_eye_open.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ic_eye_open.png; sourceTree = "<group>"; };
+		7C8BC4E71CD7ED9100402247 /* ic_eye_open@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ic_eye_open@2x.png"; sourceTree = "<group>"; };
+		7C8BC4E81CD7ED9100402247 /* ic_eye_open@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ic_eye_open@3x.png"; sourceTree = "<group>"; };
+		7C8BC4E91CD7ED9100402247 /* ic_password_checkmark.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ic_password_checkmark.png; sourceTree = "<group>"; };
+		7C8BC4EA1CD7ED9100402247 /* ic_password_checkmark@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ic_password_checkmark@2x.png"; sourceTree = "<group>"; };
+		7C8BC4EB1CD7ED9100402247 /* ic_password_checkmark@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ic_password_checkmark@3x.png"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		7C8BC4C61CD7EB3700402247 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		7C8BC4C01CD7EB3700402247 = {
+			isa = PBXGroup;
+			children = (
+				7C8BC4DE1CD7EB4700402247 /* HideShowPasswordTextField */,
+				7C8BC4CB1CD7EB3700402247 /* HideShowPasswordTextFieldExample */,
+				7C8BC4CA1CD7EB3700402247 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		7C8BC4CA1CD7EB3700402247 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				7C8BC4C91CD7EB3700402247 /* HideShowPasswordTextFieldExample.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		7C8BC4CB1CD7EB3700402247 /* HideShowPasswordTextFieldExample */ = {
+			isa = PBXGroup;
+			children = (
+				7C8BC4CC1CD7EB3700402247 /* AppDelegate.swift */,
+				7C8BC4CE1CD7EB3700402247 /* ViewController.swift */,
+				7C8BC4D01CD7EB3700402247 /* Main.storyboard */,
+				7C8BC4D31CD7EB3700402247 /* Assets.xcassets */,
+				7C8BC4D51CD7EB3700402247 /* LaunchScreen.storyboard */,
+				7C8BC4D81CD7EB3700402247 /* Info.plist */,
+			);
+			path = HideShowPasswordTextFieldExample;
+			sourceTree = "<group>";
+		};
+		7C8BC4DE1CD7EB4700402247 /* HideShowPasswordTextField */ = {
+			isa = PBXGroup;
+			children = (
+				7C8BC4E31CD7ED9100402247 /* ic_eye_closed.png */,
+				7C8BC4E41CD7ED9100402247 /* ic_eye_closed@2x.png */,
+				7C8BC4E51CD7ED9100402247 /* ic_eye_closed@3x.png */,
+				7C8BC4E61CD7ED9100402247 /* ic_eye_open.png */,
+				7C8BC4E71CD7ED9100402247 /* ic_eye_open@2x.png */,
+				7C8BC4E81CD7ED9100402247 /* ic_eye_open@3x.png */,
+				7C8BC4E91CD7ED9100402247 /* ic_password_checkmark.png */,
+				7C8BC4EA1CD7ED9100402247 /* ic_password_checkmark@2x.png */,
+				7C8BC4EB1CD7ED9100402247 /* ic_password_checkmark@3x.png */,
+				7C8BC4DF1CD7EB4700402247 /* HideShowPasswordTextField.swift */,
+				7C8BC4E01CD7EB4700402247 /* PasswordToggleVisibilityView.swift */,
+			);
+			name = HideShowPasswordTextField;
+			path = ../../HideShowPasswordTextField;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		7C8BC4C81CD7EB3700402247 /* HideShowPasswordTextFieldExample */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 7C8BC4DB1CD7EB3700402247 /* Build configuration list for PBXNativeTarget "HideShowPasswordTextFieldExample" */;
+			buildPhases = (
+				7C8BC4C51CD7EB3700402247 /* Sources */,
+				7C8BC4C61CD7EB3700402247 /* Frameworks */,
+				7C8BC4C71CD7EB3700402247 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = HideShowPasswordTextFieldExample;
+			productName = HideShowPasswordTextFieldExample;
+			productReference = 7C8BC4C91CD7EB3700402247 /* HideShowPasswordTextFieldExample.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		7C8BC4C11CD7EB3700402247 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0730;
+				LastUpgradeCheck = 0730;
+				ORGANIZATIONNAME = Guidebook;
+				TargetAttributes = {
+					7C8BC4C81CD7EB3700402247 = {
+						CreatedOnToolsVersion = 7.3;
+					};
+				};
+			};
+			buildConfigurationList = 7C8BC4C41CD7EB3700402247 /* Build configuration list for PBXProject "HideShowPasswordTextFieldExample" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 7C8BC4C01CD7EB3700402247;
+			productRefGroup = 7C8BC4CA1CD7EB3700402247 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				7C8BC4C81CD7EB3700402247 /* HideShowPasswordTextFieldExample */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		7C8BC4C71CD7EB3700402247 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7C8BC4D71CD7EB3700402247 /* LaunchScreen.storyboard in Resources */,
+				7C8BC4EF1CD7ED9100402247 /* ic_eye_open.png in Resources */,
+				7C8BC4EE1CD7ED9100402247 /* ic_eye_closed@3x.png in Resources */,
+				7C8BC4F11CD7ED9100402247 /* ic_eye_open@3x.png in Resources */,
+				7C8BC4F41CD7ED9100402247 /* ic_password_checkmark@3x.png in Resources */,
+				7C8BC4D41CD7EB3700402247 /* Assets.xcassets in Resources */,
+				7C8BC4D21CD7EB3700402247 /* Main.storyboard in Resources */,
+				7C8BC4F21CD7ED9100402247 /* ic_password_checkmark.png in Resources */,
+				7C8BC4EC1CD7ED9100402247 /* ic_eye_closed.png in Resources */,
+				7C8BC4F31CD7ED9100402247 /* ic_password_checkmark@2x.png in Resources */,
+				7C8BC4F01CD7ED9100402247 /* ic_eye_open@2x.png in Resources */,
+				7C8BC4ED1CD7ED9100402247 /* ic_eye_closed@2x.png in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		7C8BC4C51CD7EB3700402247 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7C8BC4CF1CD7EB3700402247 /* ViewController.swift in Sources */,
+				7C8BC4E21CD7EB4700402247 /* PasswordToggleVisibilityView.swift in Sources */,
+				7C8BC4CD1CD7EB3700402247 /* AppDelegate.swift in Sources */,
+				7C8BC4E11CD7EB4700402247 /* HideShowPasswordTextField.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		7C8BC4D01CD7EB3700402247 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				7C8BC4D11CD7EB3700402247 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		7C8BC4D51CD7EB3700402247 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				7C8BC4D61CD7EB3700402247 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		7C8BC4D91CD7EB3700402247 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		7C8BC4DA1CD7EB3700402247 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		7C8BC4DC1CD7EB3700402247 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = HideShowPasswordTextFieldExample/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.Guidebook.HideShowPasswordTextFieldExample;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		7C8BC4DD1CD7EB3700402247 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = HideShowPasswordTextFieldExample/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.Guidebook.HideShowPasswordTextFieldExample;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		7C8BC4C41CD7EB3700402247 /* Build configuration list for PBXProject "HideShowPasswordTextFieldExample" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7C8BC4D91CD7EB3700402247 /* Debug */,
+				7C8BC4DA1CD7EB3700402247 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		7C8BC4DB1CD7EB3700402247 /* Build configuration list for PBXNativeTarget "HideShowPasswordTextFieldExample" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7C8BC4DC1CD7EB3700402247 /* Debug */,
+				7C8BC4DD1CD7EB3700402247 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 7C8BC4C11CD7EB3700402247 /* Project object */;
+}
