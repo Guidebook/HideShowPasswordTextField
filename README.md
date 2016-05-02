@@ -8,7 +8,7 @@ Created by [@lookatpete](https://twitter.com/lookatpete) (product), [@pklada](ht
 
 ## Installation
 ### Cocoapods
-`pod 'HideShowPasswordTextField', :git 'https://github.com/Guidebook/HideShowPasswordTextField'`
+`pod 'HideShowPasswordTextField', :git => 'https://github.com/Guidebook/HideShowPasswordTextField'`
 
 ### Manual
 Just add the files in `HideShowPasswordTextField/` to your project.
