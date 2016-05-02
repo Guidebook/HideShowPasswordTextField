@@ -4,13 +4,14 @@ An easy to use `UITextField` subclass that adds a visibility toggle and an optio
 
 Created by [@lookatpete](https://twitter.com/lookatpete) (product), [@pklada](https://twitter.com/pklada) (design), and [@miketsprague](https://twitter.com/miketsprague) (code)
 
+![gif](https://s3.amazonaws.com/f.cl.ly/items/1E3Y19383s3J3g0b2Y0M/password_gif.gif?v=fc97ac97)
+
 ## Installation
 ### Cocoapods
 `pod 'HideShowPasswordTextField', :git 'https://github.com/Guidebook/HideShowPasswordTextField'`
 
 ### Manual
 Just add the files in `HideShowPasswordTextField/` to your project.
-
 
 
 ## Usage
