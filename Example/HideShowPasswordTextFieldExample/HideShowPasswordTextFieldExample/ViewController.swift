@@ -25,11 +25,12 @@ class ViewController: UIViewController {
 
 // MARK: UITextFieldDelegate
 extension ViewController: UITextFieldDelegate {
-    func textField(textField: UITextField, shouldChangeCharactersInRange range: NSRange, textField string: String) -> Bool {
+    
+    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
         return passwordTextField.textField(textField, shouldChangeCharactersInRange: range, replacementString: string)
     }
     
-    func textFieldDidEndEditing(textField: UITextField) {
+    func textFieldDidEndEditing(_ textField: UITextField) {
         passwordTextField.textFieldDidEndEditing(textField)
     }
 }
@@ -38,21 +39,21 @@ extension ViewController: UITextFieldDelegate {
 // Implementing this delegate is entirely optional.  
 // It's useful when you want to show the user that their password is valid.
 extension ViewController: HideShowPasswordTextFieldDelegate {
-    func isValidPassword(password: String) -> Bool {
+    func isValidPassword(_ password: String) -> Bool {
         return password.characters.count > 7
     }
 }
 
 // MARK: Private helpers
 extension ViewController {
-    private func setupPasswordTextField() {
+    fileprivate func setupPasswordTextField() {
         passwordTextField.passwordDelegate = self
         passwordTextField.delegate = self
-        passwordTextField.borderStyle = .None
-        passwordTextField.clearButtonMode = .WhileEditing
+        passwordTextField.borderStyle = .none
+        passwordTextField.clearButtonMode = .whileEditing
         passwordTextField.layer.borderWidth = 0.5
-        passwordTextField.layer.borderColor = UIColor(red: 220/255.0, green: 220/255.0, blue: 220/255.0, alpha: 1.0).CGColor
-        passwordTextField.borderStyle = UITextBorderStyle.None
+        passwordTextField.layer.borderColor = UIColor(red: 220/255.0, green: 220/255.0, blue: 220/255.0, alpha: 1.0).cgColor
+        passwordTextField.borderStyle = UITextBorderStyle.none
         passwordTextField.clipsToBounds = true
         passwordTextField.layer.cornerRadius = 0
         
@@ -61,6 +62,6 @@ extension ViewController {
         
         // left view hack to add padding
         passwordTextField.leftView = UIView(frame: CGRect(x: 0, y: 0, width: 10, height: 3))
-        passwordTextField.leftViewMode = .Always
+        passwordTextField.leftViewMode = .always
     }
 }
