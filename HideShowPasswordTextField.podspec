@@ -1,6 +1,6 @@
 Pod::Spec.new do |spec|
   spec.name = 'HideShowPasswordTextField'
-  spec.version = '0.1'
+  spec.version = '0.2'
   spec.summary = 'Password visibility toggle text field'
   spec.description = 'An easy to use UITextField subclass that adds a visibility toggle and an optional validation checkmark'
   spec.homepage = 'https://github.com/Guidebook/HideShowPasswordTextField'
