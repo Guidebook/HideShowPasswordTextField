@@ -22,25 +22,25 @@ class PasswordToggleVisibilityView: UIView {
     weak var delegate: PasswordToggleVisibilityDelegate?
     
     enum EyeState {
-        case Open
-        case Closed
+        case open
+        case closed
     }
     
     var eyeState: EyeState {
         set {
-            eyeButton.selected = newValue == .Open
+            eyeButton.isSelected = newValue == .open
         }
         get {
-            return eyeButton.selected ? .Open : .Closed
+            return eyeButton.isSelected ? .open : .closed
         }
     }
     
     var checkmarkVisible: Bool {
         set {
-            checkmarkImageView.hidden = !newValue
+            checkmarkImageView.isHidden = !newValue
         }
         get {
-            return !checkmarkImageView.hidden
+            return !checkmarkImageView.isHidden
         }
     }
     
@@ -52,10 +52,10 @@ class PasswordToggleVisibilityView: UIView {
     }
     
     override init(frame: CGRect) {
-        self.eyeOpenedImage = UIImage(named: "ic_eye_open")!.imageWithRenderingMode(.AlwaysTemplate)
+        self.eyeOpenedImage = UIImage(named: "ic_eye_open")!.withRenderingMode(.alwaysTemplate)
         self.eyeClosedImage = UIImage(named: "ic_eye_closed")!
-        self.checkmarkImage = UIImage(named: "ic_password_checkmark")!.imageWithRenderingMode(.AlwaysTemplate)
-        self.eyeButton = UIButton(type: .Custom)
+        self.checkmarkImage = UIImage(named: "ic_password_checkmark")!.withRenderingMode(.alwaysTemplate)
+        self.eyeButton = UIButton(type: .custom)
         self.checkmarkImageView = UIImageView(image: self.checkmarkImage)
         super.init(frame: frame)
         setupViews()
@@ -67,32 +67,32 @@ class PasswordToggleVisibilityView: UIView {
     
     private func setupViews() {
         let padding: CGFloat = 10
-        let buttonWidth = (CGRectGetWidth(frame) / 2) - padding
-        let buttonFrame = CGRect(x: buttonWidth + padding, y: 0, width: buttonWidth, height: CGRectGetHeight(frame))
+        let buttonWidth = (frame.width / 2) - padding
+        let buttonFrame = CGRect(x: buttonWidth + padding, y: 0, width: buttonWidth, height: frame.height)
         eyeButton.frame = buttonFrame
-        eyeButton.backgroundColor = UIColor.clearColor()
+        eyeButton.backgroundColor = UIColor.clear
         eyeButton.adjustsImageWhenHighlighted = false
-        eyeButton.setImage(self.eyeClosedImage, forState: .Normal)
-        eyeButton.setImage(self.eyeOpenedImage.imageWithRenderingMode(.AlwaysTemplate), forState: .Selected)
-        eyeButton.addTarget(self, action: #selector(eyeButtonPressed), forControlEvents: .TouchUpInside)
-        eyeButton.autoresizingMask = [.FlexibleWidth, .FlexibleHeight]
+        eyeButton.setImage(self.eyeClosedImage, for: .normal)
+        eyeButton.setImage(self.eyeOpenedImage.withRenderingMode(.alwaysTemplate), for: .selected)
+        eyeButton.addTarget(self, action: #selector(eyeButtonPressed), for: .touchUpInside)
+        eyeButton.autoresizingMask = [.flexibleWidth, .flexibleHeight]
         eyeButton.tintColor = self.tintColor
         self.addSubview(eyeButton)
         
-        let checkmarkImageWidth = (CGRectGetWidth(frame) / 2) - padding
-        let checkmarkFrame = CGRect(x: padding, y: 0, width: checkmarkImageWidth, height: CGRectGetHeight(frame))
+        let checkmarkImageWidth = (frame.width / 2) - padding
+        let checkmarkFrame = CGRect(x: padding, y: 0, width: checkmarkImageWidth, height: frame.height)
         checkmarkImageView.frame = checkmarkFrame
-        checkmarkImageView.autoresizingMask = [.FlexibleWidth, .FlexibleHeight]
-        checkmarkImageView.contentMode = .Center
-        checkmarkImageView.backgroundColor = UIColor.clearColor()
+        checkmarkImageView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
+        checkmarkImageView.contentMode = .center
+        checkmarkImageView.backgroundColor = UIColor.clear
         checkmarkImageView.tintColor = self.tintColor
         self.addSubview(checkmarkImageView)
     }
     
     
     @objc func eyeButtonPressed(sender: AnyObject) {
-        eyeButton.selected = !eyeButton.selected
-        delegate?.viewWasToggled(self, isSelected: eyeButton.selected)
+        eyeButton.isSelected = !eyeButton.isSelected
+        delegate?.viewWasToggled(passwordToggleVisibilityView: self, isSelected: eyeButton.isSelected)
     }
 }
 
