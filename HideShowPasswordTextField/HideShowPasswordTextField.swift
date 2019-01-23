@@ -61,7 +61,7 @@ extension HideShowPasswordTextField {
         textField.text = updatedString
         
         //Setting the cursor at the right place
-        let selectedRange = NSMakeRange(range.location + string.characters.count, 0)
+        let selectedRange = NSMakeRange(range.location + string.count, 0)
         let from = textField.position(from: textField.beginningOfDocument, offset:selectedRange.location)!
         let to = textField.position(from: from, offset:selectedRange.length)!
         textField.selectedTextRange = textField.textRange(from: from, to: to)
