@@ -13,7 +13,7 @@ protocol HideShowPasswordTextFieldDelegate: class {
     func isValidPassword(_ password: String) -> Bool
 }
 
-class HideShowPasswordTextField: UITextField {
+public class HideShowPasswordTextField: UITextField {
     weak var passwordDelegate: HideShowPasswordTextFieldDelegate?
     var preferredFont: UIFont? {
         didSet {
@@ -24,7 +24,7 @@ class HideShowPasswordTextField: UITextField {
         }
     }
     
-    override var isSecureTextEntry: Bool {
+    override public var isSecureTextEntry: Bool {
         didSet {
             if !self.isSecureTextEntry {
                 self.font = nil
@@ -49,12 +49,12 @@ class HideShowPasswordTextField: UITextField {
         super.init(coder: aDecoder)
     }
     
-    override func awakeFromNib() {
+    override public func awakeFromNib() {
         super.awakeFromNib()
         setupViews()
     }
     
-    override func becomeFirstResponder() -> Bool {
+    override public func becomeFirstResponder() -> Bool {
         // Hack to prevent text from getting cleared when switching secure entry
         // https://stackoverflow.com/a/49771445/1417922
         let success = super.becomeFirstResponder()
