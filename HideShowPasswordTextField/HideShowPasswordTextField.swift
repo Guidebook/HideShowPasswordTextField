@@ -10,30 +10,35 @@ import Foundation
 import UIKit
 
 protocol HideShowPasswordTextFieldDelegate: class {
-    func isValidPassword(password: String) -> Bool
+    func isValidPassword(_ password: String) -> Bool
 }
 
 class HideShowPasswordTextField: UITextField {
     weak var passwordDelegate: HideShowPasswordTextFieldDelegate?
     var preferredFont: UIFont? {
         didSet {
-            self.font = preferredFont
-            
+            self.font = nil
             if self.isSecureTextEntry {
-                self.font = nil
+                self.font = self.preferredFont
             }
         }
     }
     
     override var isSecureTextEntry: Bool {
         didSet {
-            if !isSecureTextEntry {
+            if !self.isSecureTextEntry {
                 self.font = nil
-                self.font = preferredFont
+                self.font = self.preferredFont
+            }
+            
+            // Hack to prevent text from getting cleared when switching secure entry
+            // https://stackoverflow.com/a/49771445/1417922
+            if self.isFirstResponder {
+                _ = self.becomeFirstResponder()
             }
         }
     }
-    private var passwordToggleVisibilityView: PasswordToggleVisibilityView!
+    fileprivate var passwordToggleVisibilityView: PasswordToggleVisibilityView!
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -48,31 +53,23 @@ class HideShowPasswordTextField: UITextField {
         super.awakeFromNib()
         setupViews()
     }
+    
+    override func becomeFirstResponder() -> Bool {
+        // Hack to prevent text from getting cleared when switching secure entry
+        // https://stackoverflow.com/a/49771445/1417922
+        let success = super.becomeFirstResponder()
+        if self.isSecureTextEntry, let text = self.text {
+            self.text?.removeAll()
+            self.insertText(text)
+        }
+        return success
+    }
 }
 
 // MARK: UITextFieldDelegate needed calls
 // Implement UITextFieldDelegate when you use this, and forward these calls to this class!
 extension HideShowPasswordTextField {
-    func textField(textField: UITextField, shouldChangeCharactersInRange range: NSRange, replacementString string: String) -> Bool {
-        // Hack to prevent text from getting cleared
-        // http://stackoverflow.com/a/29195723/1417922
-        //Setting the new text.
-        let updatedString = (textField.text as NSString?)?.replacingCharacters(in: range, with: string)
-        textField.text = updatedString
-        
-        //Setting the cursor at the right place
-        let selectedRange = NSMakeRange(range.location + string.count, 0)
-        let from = textField.position(from: textField.beginningOfDocument, offset:selectedRange.location)!
-        let to = textField.position(from: from, offset:selectedRange.length)!
-        textField.selectedTextRange = textField.textRange(from: from, to: to)
-        
-        //Sending an action
-        textField.sendActions(for: .editingChanged)
-        
-        return false
-    }
-    
-    func textFieldDidEndEditing(textField: UITextField) {
+    func textFieldDidEndEditing(_ textField: UITextField) {
         passwordToggleVisibilityView.eyeState = PasswordToggleVisibilityView.EyeState.closed
         self.isSecureTextEntry = !isSelected
     }
@@ -80,7 +77,7 @@ extension HideShowPasswordTextField {
 
 // MARK: PasswordToggleVisibilityDelegate
 extension HideShowPasswordTextField: PasswordToggleVisibilityDelegate {
-    func viewWasToggled(passwordToggleVisibilityView: PasswordToggleVisibilityView, isSelected selected: Bool) {
+    func viewWasToggled(_ passwordToggleVisibilityView: PasswordToggleVisibilityView, isSelected selected: Bool) {
         
         // hack to fix a bug with padding when switching between secureTextEntry state
         let hackString = self.text
@@ -94,9 +91,9 @@ extension HideShowPasswordTextField: PasswordToggleVisibilityDelegate {
 
 // MARK: Control events
 extension HideShowPasswordTextField {
-    @objc func passwordTextChanged(sender: AnyObject) {
+    @objc func passwordTextChanged(_ sender: AnyObject) {
         if let password = self.text {
-            passwordToggleVisibilityView.checkmarkVisible = passwordDelegate?.isValidPassword(password: password) ?? false
+            passwordToggleVisibilityView.checkmarkVisible = passwordDelegate?.isValidPassword(password) ?? false
         } else {
             passwordToggleVisibilityView.checkmarkVisible = false
         }
@@ -105,23 +102,22 @@ extension HideShowPasswordTextField {
 
 // MARK: Private helpers
 extension HideShowPasswordTextField {
-    private func setupViews() {
+    fileprivate func setupViews() {
         let toggleFrame = CGRect(x: 0, y: 0, width: 66, height: frame.height)
         passwordToggleVisibilityView = PasswordToggleVisibilityView(frame: toggleFrame)
         passwordToggleVisibilityView.delegate = self
         passwordToggleVisibilityView.checkmarkVisible = false
-        
         self.keyboardType = .asciiCapable
         self.rightView = passwordToggleVisibilityView
-        self.rightViewMode = .whileEditing
-        
         self.font = self.preferredFont
-        self.addTarget(self, action: #selector(HideShowPasswordTextField.passwordTextChanged(sender:)), for: .editingChanged)
+        self.addTarget(self, action: #selector(HideShowPasswordTextField.passwordTextChanged(_:)), for: .editingChanged)
         
         // if we don't do this, the eye flies in on textfield focus!
         self.rightView?.frame = self.rightViewRect(forBounds: self.bounds)
         
-        // default eye state based on our initial secure text entry
-        passwordToggleVisibilityView.eyeState = isSecureTextEntry ? .closed : .open
+        self.rightViewMode = .whileEditing
+        // left view hack to add padding
+        self.leftView = UIView(frame: CGRect(x: 0, y: 0, width: 10, height: 3))
+        self.leftViewMode = .always
     }
 }
