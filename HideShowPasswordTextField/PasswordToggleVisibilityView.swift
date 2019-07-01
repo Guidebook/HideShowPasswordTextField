@@ -10,15 +10,15 @@ import Foundation
 import UIKit
 
 protocol PasswordToggleVisibilityDelegate: class {
-    func viewWasToggled(passwordToggleVisibilityView: PasswordToggleVisibilityView, isSelected selected: Bool)
+    func viewWasToggled(_ passwordToggleVisibilityView: PasswordToggleVisibilityView, isSelected selected: Bool)
 }
 
 class PasswordToggleVisibilityView: UIView {
-    private let eyeOpenedImage: UIImage
-    private let eyeClosedImage: UIImage
-    private let checkmarkImage: UIImage
-    private let eyeButton: UIButton
-    private let checkmarkImageView: UIImageView
+    fileprivate let eyeOpenedImage: UIImage
+    fileprivate let eyeClosedImage: UIImage
+    fileprivate let checkmarkImage: UIImage
+    fileprivate let eyeButton: UIButton
+    fileprivate let checkmarkImageView: UIImageView
     weak var delegate: PasswordToggleVisibilityDelegate?
     
     enum EyeState {
@@ -37,7 +37,11 @@ class PasswordToggleVisibilityView: UIView {
     
     var checkmarkVisible: Bool {
         set {
-            checkmarkImageView.isHidden = !newValue
+            let isHidden = !newValue
+            guard checkmarkImageView.isHidden != isHidden else {
+                return
+            }
+            checkmarkImageView.isHidden = isHidden
         }
         get {
             return !checkmarkImageView.isHidden
@@ -53,7 +57,7 @@ class PasswordToggleVisibilityView: UIView {
     
     override init(frame: CGRect) {
         self.eyeOpenedImage = UIImage(named: "ic_eye_open")!.withRenderingMode(.alwaysTemplate)
-        self.eyeClosedImage = UIImage(named: "ic_eye_closed")!
+        self.eyeClosedImage = UIImage(named: "ic_eye_closed")!.withRenderingMode(.alwaysTemplate)
         self.checkmarkImage = UIImage(named: "ic_password_checkmark")!.withRenderingMode(.alwaysTemplate)
         self.eyeButton = UIButton(type: .custom)
         self.checkmarkImageView = UIImageView(image: self.checkmarkImage)
@@ -65,16 +69,16 @@ class PasswordToggleVisibilityView: UIView {
         fatalError("Don't use init with coder.")
     }
     
-    private func setupViews() {
+    fileprivate func setupViews() {
         let padding: CGFloat = 10
         let buttonWidth = (frame.width / 2) - padding
         let buttonFrame = CGRect(x: buttonWidth + padding, y: 0, width: buttonWidth, height: frame.height)
         eyeButton.frame = buttonFrame
         eyeButton.backgroundColor = UIColor.clear
         eyeButton.adjustsImageWhenHighlighted = false
-        eyeButton.setImage(self.eyeClosedImage, for: .normal)
+        eyeButton.setImage(self.eyeClosedImage, for: UIControl.State())
         eyeButton.setImage(self.eyeOpenedImage.withRenderingMode(.alwaysTemplate), for: .selected)
-        eyeButton.addTarget(self, action: #selector(eyeButtonPressed), for: .touchUpInside)
+        eyeButton.addTarget(self, action: #selector(PasswordToggleVisibilityView.eyeButtonPressed(_:)), for: .touchUpInside)
         eyeButton.autoresizingMask = [.flexibleWidth, .flexibleHeight]
         eyeButton.tintColor = self.tintColor
         self.addSubview(eyeButton)
@@ -87,13 +91,13 @@ class PasswordToggleVisibilityView: UIView {
         checkmarkImageView.backgroundColor = UIColor.clear
         checkmarkImageView.tintColor = self.tintColor
         self.addSubview(checkmarkImageView)
+        
+        self.checkmarkImageView.isHidden = true
     }
     
     
-    @objc func eyeButtonPressed(sender: AnyObject) {
+    @objc func eyeButtonPressed(_ sender: AnyObject) {
         eyeButton.isSelected = !eyeButton.isSelected
-        delegate?.viewWasToggled(passwordToggleVisibilityView: self, isSelected: eyeButton.isSelected)
+        delegate?.viewWasToggled(self, isSelected: eyeButton.isSelected)
     }
 }
-
-// Animation helpers
