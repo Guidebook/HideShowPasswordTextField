@@ -56,9 +56,9 @@ class PasswordToggleVisibilityView: UIView {
     }
     
     override init(frame: CGRect) {
-        self.eyeOpenedImage = UIImage(named: "ic_eye_open")!.withRenderingMode(.alwaysTemplate)
-        self.eyeClosedImage = UIImage(named: "ic_eye_closed")!.withRenderingMode(.alwaysTemplate)
-        self.checkmarkImage = UIImage(named: "ic_password_checkmark")!.withRenderingMode(.alwaysTemplate)
+        self.eyeOpenedImage = UIImage(named: "ic_eye_open", in: Bundle(for: PasswordToggleVisibilityView.self), compatibleWith: nil)!.withRenderingMode(.alwaysTemplate)
+        self.eyeClosedImage = UIImage(named: "ic_eye_closed", in: Bundle(for: PasswordToggleVisibilityView.self), compatibleWith: nil)!.withRenderingMode(.alwaysTemplate)
+        self.checkmarkImage = UIImage(named: "ic_password_checkmark", in: Bundle(for: PasswordToggleVisibilityView.self), compatibleWith: nil)!.withRenderingMode(.alwaysTemplate)
         self.eyeButton = UIButton(type: .custom)
         self.checkmarkImageView = UIImageView(image: self.checkmarkImage)
         super.init(frame: frame)
