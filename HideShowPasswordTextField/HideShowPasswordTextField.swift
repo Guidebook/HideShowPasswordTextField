@@ -38,6 +38,13 @@ public class HideShowPasswordTextField: UITextField {
             }
         }
     }
+
+    override public var tintColor: UIColor? {
+        didSet {
+            passwordToggleVisibilityView.tintColor = tintColor
+        }
+    }
+
     fileprivate var passwordToggleVisibilityView: PasswordToggleVisibilityView!
     
     override init(frame: CGRect) {
