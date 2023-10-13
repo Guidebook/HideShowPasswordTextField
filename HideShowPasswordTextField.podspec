@@ -10,6 +10,6 @@ Pod::Spec.new do |spec|
 
   spec.platform = :ios, '9.0'
   spec.frameworks = 'UIKit'
-  spec.source_files = 'HideShowPasswordTextField/*.{h,m,swift}'
-  spec.resources = ['HideShowPasswordTextField/*.{png,xib}']
+  spec.source_files = 'HideShowPasswordTextField/Sources/HideShowPasswordTextField/*.{h,m,swift}'
+  spec.resources = ['HideShowPasswordTextField/Sources/HideShowPasswordTextField/*.{png,xib}']
 end
