@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		6023D38E2AD9374400C9F2F7 /* HideShowPasswordTextField in Frameworks */ = {isa = PBXBuildFile; productRef = 6023D38D2AD9374400C9F2F7 /* HideShowPasswordTextField */; };
+		60CD11DB2AD9478200410D57 /* HideShowPasswordTextField in Frameworks */ = {isa = PBXBuildFile; productRef = 60CD11DA2AD9478200410D57 /* HideShowPasswordTextField */; };
+		60CD11DE2AD947AD00410D57 /* HideShowPasswordTextField in Frameworks */ = {isa = PBXBuildFile; productRef = 60CD11DD2AD947AD00410D57 /* HideShowPasswordTextField */; };
 		7C8BC4CD1CD7EB3700402247 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C8BC4CC1CD7EB3700402247 /* AppDelegate.swift */; };
 		7C8BC4CF1CD7EB3700402247 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C8BC4CE1CD7EB3700402247 /* ViewController.swift */; };
 		7C8BC4D21CD7EB3700402247 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7C8BC4D01CD7EB3700402247 /* Main.storyboard */; };
@@ -30,6 +32,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				60CD11DB2AD9478200410D57 /* HideShowPasswordTextField in Frameworks */,
+				60CD11DE2AD947AD00410D57 /* HideShowPasswordTextField in Frameworks */,
 				6023D38E2AD9374400C9F2F7 /* HideShowPasswordTextField in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -84,6 +88,8 @@
 			name = HideShowPasswordTextFieldExample;
 			packageProductDependencies = (
 				6023D38D2AD9374400C9F2F7 /* HideShowPasswordTextField */,
+				60CD11DA2AD9478200410D57 /* HideShowPasswordTextField */,
+				60CD11DD2AD947AD00410D57 /* HideShowPasswordTextField */,
 			);
 			productName = HideShowPasswordTextFieldExample;
 			productReference = 7C8BC4C91CD7EB3700402247 /* HideShowPasswordTextFieldExample.app */;
@@ -116,7 +122,7 @@
 			);
 			mainGroup = 7C8BC4C01CD7EB3700402247;
 			packageReferences = (
-				6023D38C2AD9374400C9F2F7 /* XCLocalSwiftPackageReference "../../HideShowPasswordTextField" */,
+				60CD11DC2AD947AD00410D57 /* XCLocalSwiftPackageReference "../.." */,
 			);
 			productRefGroup = 7C8BC4CA1CD7EB3700402247 /* Products */;
 			projectDirPath = "";
@@ -338,14 +344,22 @@
 /* End XCConfigurationList section */
 
 /* Begin XCLocalSwiftPackageReference section */
-		6023D38C2AD9374400C9F2F7 /* XCLocalSwiftPackageReference "../../HideShowPasswordTextField" */ = {
+		60CD11DC2AD947AD00410D57 /* XCLocalSwiftPackageReference "../.." */ = {
 			isa = XCLocalSwiftPackageReference;
-			relativePath = ../../HideShowPasswordTextField;
+			relativePath = ../..;
 		};
 /* End XCLocalSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
 		6023D38D2AD9374400C9F2F7 /* HideShowPasswordTextField */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = HideShowPasswordTextField;
+		};
+		60CD11DA2AD9478200410D57 /* HideShowPasswordTextField */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = HideShowPasswordTextField;
+		};
+		60CD11DD2AD947AD00410D57 /* HideShowPasswordTextField */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = HideShowPasswordTextField;
 		};
