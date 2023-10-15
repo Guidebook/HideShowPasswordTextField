@@ -9,12 +9,12 @@
 import Foundation
 import UIKit
 
-protocol HideShowPasswordTextFieldDelegate: class {
+public protocol HideShowPasswordTextFieldDelegate: AnyObject {
     func isValidPassword(_ password: String) -> Bool
 }
 
 public class HideShowPasswordTextField: UITextField {
-    weak var passwordDelegate: HideShowPasswordTextFieldDelegate?
+    public weak var passwordDelegate: HideShowPasswordTextFieldDelegate?
     var preferredFont: UIFont? {
         didSet {
             self.font = nil
@@ -38,6 +38,13 @@ public class HideShowPasswordTextField: UITextField {
             }
         }
     }
+
+    override public var tintColor: UIColor? {
+        didSet {
+            passwordToggleVisibilityView.tintColor = tintColor
+        }
+    }
+
     fileprivate var passwordToggleVisibilityView: PasswordToggleVisibilityView!
     
     override init(frame: CGRect) {

@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import HideShowPasswordTextField
 
 class ViewController: UIViewController {
     @IBOutlet weak var passwordTextField: HideShowPasswordTextField!
